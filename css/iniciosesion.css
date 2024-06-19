@@ -1,0 +1,350 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body{
+    background: var(--fondo-fondo-login);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+.container{
+    background: var(--fondo-login);
+    color: var(--color-texto);
+    border-radius: 50px;
+    box-shadow: 0 5px 15px #7ca4a5;
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    max-width: 100%;
+    min-height: 500px;
+}
+
+/* texto del register */
+.container p{
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    margin: 30px 0;
+    
+}
+
+/* texto de crear una cuenta */
+.container span{
+    font-size: 13px;
+    color: var(--color-texto);
+}
+
+.container a{
+    color: var(--color-texto);
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button{
+    background-color:var(--color-backgraound-mobile);
+    color:var(--color-texto);
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+.container button:hover{
+    background-color: var(--color-primario);
+    color: var(--color-texto);    
+}
+
+
+
+.container button.hidden{
+    border-color: #EFEFEF;
+}
+
+.container form{
+    background-color: var(--color-login);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container input{
+    border: none;
+    margin: 14px 0;
+    padding: 15px 15px;
+    font-size: 14px;
+    border-radius: 80px;
+    width: 100%;
+    outline: none;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in{
+    
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+
+/* parte del register */
+.toggle{
+    height: 100%;
+    background: none;
+    color: var(--color-texto);
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+
+/* Media Query */
+@media screen and (max-width: 750px) {
+
+    /* contenedor principal */
+    .container {
+        /* define el ancho maximo para el contenedor en pantalla pequeña */
+        max-width: 350px;
+
+        /* establece la altura fija para el contenedor  */
+        height: 600px;
+
+        /* Organiza los elementos del contenedor en una columna */
+        flex-direction: column;
+
+        /* centra el contenedor horizontalmente en la pagina */
+        margin: 0 auto;
+    }
+
+    
+    /* elementos del div dentro del conetenedor */
+    .container div {
+        /* elimina los margenes para evitar espacios no deseados */
+        margin: 0;
+
+        /* se utiliza para mayor control sobre la ubicacion de los elementos */
+        position: absolute;
+
+        /* tamaño del texto */
+        font-size: 15px;
+    }
+    
+    /* Formulario dentro del contenedor*/
+    .container form {
+        /* separa el formulario del borde del contenedor */
+        padding: 0px 20px;
+    }
+
+    /* campo de entrada dentro del formulario (texto del correo y contraseña) */
+    .container input {
+        /* tamaño del texto */
+        font-size: 12px;
+
+        /* separacion entre el texto de los correos y los bordes */
+        padding: 10px 12px;
+
+        /* bordes redondeados */
+        border-radius: 20px;
+    }
+
+
+    /* hace que se vea parado */
+    .sign-in,
+    .sign-up {
+
+        /* ocupa el ancho del contenedor */
+        width: 100%;
+
+        /* opupa la mitad de la altura del contenedor */
+        height: 50%;
+
+        /* se ubica en la parte superior del contenedor incialmente */
+        top: 0;
+
+    }
+
+    /* Estado activo del contenedor (cuando se muestra el formulario de registro) */
+    .container.active .sign-in {
+
+        /* se desplaza hacia abajo fuera de la vista mediante trasnform */
+        transform: translateY(-100%);
+    }
+
+    /* Estado activo del contenedor (cuando se muestra el formulario de registro) */
+    .container.active .sign-up {
+        /* Se desplaza hacia arriba para mostrarse */
+        transform: translateY(200%);
+        opacity: 1;
+        z-index: 5;
+    }
+
+    .toggle-container {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        border-radius: 0 0 100px 100px;
+    }
+
+    .container.active .toggle-container {
+        transform: translateY(-100%);
+        border-radius: 100px 100px 0 0;
+    }
+
+    .toggle {
+        left: 0;
+        top: 100%;
+        height: 200%;
+        width: 100%;
+        transform: translateY(0);
+    }
+
+    .container.active .toggle {
+        transform: translateY(-50%);
+    }
+
+    .toggle-panel {
+        width: 100%;
+        height: 50%;
+        top: 50%;
+        left: 0;
+    }
+
+    .toggle-left {
+        transform: translateY(-200%);
+    }
+
+    .container.active .toggle-left {
+        transform: translateY(0);
+    }
+
+    .toggle-right {
+        top: 0;
+        transform: translateY(0);
+    }
+
+    .container.active .toggle-right {
+        transform: translateY(200%);
+    }
+}

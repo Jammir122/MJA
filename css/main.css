@@ -1,0 +1,118 @@
+/* root es el selector sirve para escribir las variables */
+:root{
+    /* todas las variables, en este caso los colores que vamos a usar */
+    --color-tema: #0d7d7d;
+    --color-primario:#ffff;
+    --color-texto: #C2BC61 ;
+    --color-sombra-barra: 2px 5px 10px #7ca4a5 ;
+    --color-backgraound-mobile: #67a7a7;
+    --color-hover:black;
+    --color-ware:#045454;
+
+    --transition: 0.2s ease-in-out;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+    --color-tema:#011818;
+    --color-texto: rgba(206, 220, 41, 0.90);
+    --color-sombra-barra:  2px 5px 10px #111;
+    --color-backgraound-mobile-oscuro:#022222;
+    --color-ware:#022222 ;
+    color-scheme: dark;
+    }
+}
+*{
+    transition: var(--transition);
+}
+
+svg{
+    transition: color var(--transition);
+}
+
+section[id]{
+    scroll-snap-stop: 150px;
+}
+
+#Inicio{
+    scroll-margin-top: 100px;
+}
+
+/* para cambiar la separacion entre la barra y el texto principal */
+#Nosotros{
+    scroll-margin-top: -110px;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--color-tema);
+    color: var(--color-texto);
+    padding-top: 100px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-texto);
+}
+
+.horizontal-padding{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.vertical-padding{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+main{
+    padding-top: 100px;
+}
+
+h1{
+    font-family: "Poetsen One", sans-serif;
+}
+h2{
+    font-family: "Poetsen One", sans-serif;
+}
+
+/* 
+.Datalogger{
+    
+    border: solid blue;
+}
+.Nosotros{
+    margin-top: 200px;
+    border: solid blue;
+}
+
+.Contacto{
+    margin-top: 200px;
+    border: solid blue;
+} */
+/* como se ve en celular */
+@media (min-width: 970px) {
+    body{
+        padding-top: 100px;
+    }
+    
+    
+    .horizontal-padding{
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+    
+    .vertical-padding{
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    
+    
+}

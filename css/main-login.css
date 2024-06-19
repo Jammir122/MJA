@@ -1,0 +1,44 @@
+/* root es el selector sirve para escribir las variables */
+:root{
+    /* todas las variables, en este caso los colores que vamos a usar en el modo claro*/
+    --color-tema: #0d7d7d;
+    --color-primario:#ffff;
+    --color-texto: #C2BC61 ;
+    --color-sombra-barra: 2px 5px 10px #7ca4a5 ;
+    --color-backgraound-mobile: #67a7a7;
+    --color-hover:black;
+    --color-ware:#cce7f0;
+    --color-login:#007f7f;
+    --fondo-login:linear-gradient(to bottom, #006666, #66CCCC);
+    --fondo-fondo-login: linear-gradient(to bottom, #6faead, #335960);
+
+
+    ;
+
+
+    --transition: 0.2s ease-in-out;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+    --color-tema:#011818;
+    --color-texto: rgba(206, 220, 41, 0.90);
+    --color-sombra-barra: #000000;
+    --color-backgraound-mobile-oscuro:#022222;
+    --color-ware:#022222 ;
+    --color-hover:white;
+    --color-login: #004040 ;
+    --fondo-login: linear-gradient(to bottom, #002222, #1a6666);
+    --fondo-fondo-login: linear-gradient(to bottom, #3b6d6b, #1c3c42);
+
+    color-scheme: dark;
+    }
+}
+*{
+    transition: var(--transition);
+}
+
+svg{
+    transition: color var(--transition);
+}
